@@ -19,7 +19,7 @@ void insertLast(int d) {
 	p->value = d;
 	struct Node *cur = head;
 	while(cur->next!= NULL) {
-		 cur = cur->next;
+		cur = cur->next;
 	}
 	p->next = NULL;
 	cur->next= p;

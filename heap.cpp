@@ -15,20 +15,20 @@ struct Heap {
 		for (int i = 2; i < BSIZE; i++) {
 			a[i] = BNULL;
 		}
-    }
-    
-    int left(int i) {
-    	return 2*i;
-    }
-    
-    int right(int i) {
-    	return 2*i + 1;
-    }
-    
-    int parent(int i) {
-    	return i/2;
-    }
-    
+	}
+
+	int left(int i) {
+		return 2*i;
+	}
+
+	int right(int i) {
+		return 2*i + 1;
+	}
+
+	int parent(int i) {
+		return i/2;
+	}
+
 	void insertElement(int x) {
 		a[++count] = x;	
 		int v = count;
@@ -39,7 +39,7 @@ struct Heap {
 			v = u;
 		}
 	}
-	
+
 	int deleteElement() {
 		int ret = a[root];
 		int u = root; 
@@ -59,7 +59,7 @@ struct Heap {
 		}
 		return ret;
 	}
-	
+
 	void swap(int i, int j) {
 		int tmp = a[i];
 		a[i] = a[j];
@@ -72,10 +72,10 @@ struct Heap {
 	}
 
 	void preorder(int node){
-    	if(a[node] == BNULL) return;
-    	cout << " " << a[node] << " ";
-    	preorder(left(node));
-    	preorder(right(node));
+		if(a[node] == BNULL) return;
+		cout << " " << a[node] << " ";
+		preorder(left(node));
+		preorder(right(node));
 	}
 
 	void postorder() {
@@ -84,12 +84,12 @@ struct Heap {
 	}
 
 	void postorder(int node){
-    	if(a[node] == BNULL) return;
-    	postorder(left(node));
-    	postorder(right(node));
-    	cout << " " << a[node] << " ";
+		if(a[node] == BNULL) return;
+		postorder(left(node));
+		postorder(right(node));
+		cout << " " << a[node] << " ";
 	}
-	
+
 	int isEmpty() {
 		return count == 0;
 	}
@@ -97,18 +97,18 @@ struct Heap {
 
 int main(){
 	Heap heap(11);	 
-    heap.insertElement(15);
-    heap.insertElement(13);
+	heap.insertElement(15);
+	heap.insertElement(13);
 	heap.insertElement(5);
-    heap.insertElement(7);
-   	heap.insertElement(9);
-    heap.insertElement(17);
-    heap.insertElement(1);
-    heap.insertElement(3);
-   
+	heap.insertElement(7);
+	heap.insertElement(9);
+	heap.insertElement(17);
+	heap.insertElement(1);
+	heap.insertElement(3);
+
 	while (!heap.isEmpty()) {
 		cout << heap.deleteElement() << endl;
-    }
-        
+	}
+
 	return 0;
 }

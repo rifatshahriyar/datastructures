@@ -8,7 +8,7 @@ struct Node {
 };
 
 struct DoubleLinkedList {
-	
+
 	struct Node * head, * tail;
 
 	DoubleLinkedList() {
